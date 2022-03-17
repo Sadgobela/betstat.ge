@@ -468,11 +468,19 @@ body.promotions-inner main {
     background-size: cover!important;
 }
 
-.betStat-header-carousel-inner-third .owl-carousel-poster {
-    background: url("../images/carousel-third-img.png") center no-repeat;
-    width: 261px;
+/*.betStat-header-carousel-inner-third .owl-carousel-poster {*/
+/*    background: url("../images/carousel-third-img.png") center no-repeat;*/
+/*    width: 261px;*/
+/*    height: 345px;*/
+/*    display: block;*/
+/*    text-decoration: none;*/
+/*    float: left;*/
+/*    background-size: cover!important;*/
+/*}*/
+.betStat-header-carousel-inner-third .owl-carousel-poster img{
+    width: 261px!important;
     height: 345px;
-    display: block;
+    display: block!important;
     text-decoration: none;
     float: left;
     background-size: cover!important;
@@ -972,6 +980,14 @@ body.promotions-inner main {
     height: 50px;
     top: 8px;
     left: 18px;
+}
+.league-content .league-content-leftSide .league-logo {
+    position: absolute;
+    top: 8px;
+    left: 18px;
+}
+.league-content .league-content-leftSide .league-background {
+    position: absolute;
 }
 
 .league-content.laLeague .league-content-leftSide:before {
