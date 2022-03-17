@@ -11,15 +11,19 @@ use App\Http\Requests\UpdateSportRequest;
 use App\Http\Requests\UpdateTenantRequest;
 use App\Imports\MultiSheetImport;
 use App\Imports\SportImport;
+use App\Imports\TeamImport;
 use App\Models\Banner;
 use App\Models\Game;
 use App\Models\H2h;
+use App\Models\League;
 use App\Models\News;
 use App\Models\Poll;
+use App\Models\PollQuestion;
 use App\Models\Promo;
 use App\Models\Slider;
 use App\Models\Sport;
 use App\Models\Statistic;
+use App\Models\Team;
 use App\Models\User;
 use App\Notifications\TenantInviteNotification;
 use App\Providers\RouteServiceProvider;
@@ -68,7 +72,14 @@ class SportController extends Controller
             'livesport',
             'leadersport'
         ];
-        return view('admin/sport.create', compact('casinos'));
+
+        $leagues = League::query()
+            ->orderBy('order')
+            ->get();
+
+        $teams = Team::query()->get();
+
+        return view('admin/sport.create', compact('casinos', 'leagues', 'teams'));
     }
 
     /**
@@ -85,7 +96,8 @@ class SportController extends Controller
             'type' => $request->input('type'),
             'cat' => $request->input('cat'),
             'link' => $request->input('link'),
-            'date' => $request->input('date')
+            'date' => $request->input('date'),
+            'end_date' => $request->input('end_date'),
         ])->id;
         foreach ($request['1'] as $key => $value) {
             $sport = Sport::create([
@@ -183,9 +195,13 @@ class SportController extends Controller
         $sport['h2h'] = H2h::where('game_id', '=', $id)->first();
         $sport['sport'] = Sport::where('game_id', '=', $id)->get();
         $sport['statistic'] = Statistic::where('game_id', '=', $id)->get();
+        $leagues = League::query()
+            ->orderBy('order')
+            ->get();
+        $teams = Team::query()->get();
 
-//        dd($sport);
-        return view('admin/sport.edit', compact('sport'));
+
+        return view('admin/sport.edit', compact('sport', 'leagues', 'teams'));
     }
 
     /**
@@ -203,6 +219,7 @@ class SportController extends Controller
             'cat' => $request->input('cat'),
             'link' => $request->input('link'),
             'date' => $request->input('date'),
+            'end_date' => $request->input('end_date'),
         ]);
 //        dd($request->input('x'));
         foreach ($request['sportIds'] as $key => $value) {
@@ -246,7 +263,8 @@ class SportController extends Controller
     public function web()
     {
         $data = [];
-        $games = collect(Game::orderBy('id', 'asc')->get())->groupBy('type');
+        $games = collect(Game::orderBy('id', 'asc')->active()->get())->groupBy('type');
+
         foreach ($games as $key => $game) {
             if ($key == 'football') {
                 foreach ($games[$key] as $football) {
@@ -273,23 +291,20 @@ class SportController extends Controller
                     'fora' => $anyGame['sport']->max('fora'),
                     'fora_2' => $anyGame['sport']->max('fora_2')
                 ];
+
             }
 
         }
 
-        $pollData = collect(Poll::get());
-//        $sliderData = collect(Slider::get());
-        $sum = round(Poll::sum('count'), 0);
-        $data['pollData'] = array(
-            1 => ['name' => $pollData[0]->casinoName, 'count'=> round($pollData[0]->count / $sum * 100, 2)],
-            2 => ['name' => $pollData[1]->casinoName, 'count'=> round($pollData[1]->count / $sum * 100, 2)],
-            3 => ['name' => $pollData[2]->casinoName, 'count'=> round($pollData[2]->count / $sum * 100, 2)],
-            4 => ['name' => $pollData[3]->casinoName, 'count'=> round($pollData[3]->count / $sum * 100, 2)],
-            5 => ['name' => $pollData[4]->casinoName, 'count'=> round($pollData[4]->count / $sum * 100, 2)],
-            6 => ['name' => $pollData[5]->casinoName, 'count'=> round($pollData[5]->count / $sum * 100, 2)],
-        );
+        $data['pollQuestions'] = PollQuestion::query()
+            ->with('pollAnswers')
+            ->whereActive(true)
+            ->get();
 
-//      dd($data['pollData']);
+        $data['pollVotedByUser'] = auth()->user() ? auth()->user()->pollActiveQuestions()->pluck('poll_question_id') : collect([]);
+
+//        $pollData = collect(Poll::get());
+//        $sliderData = collect(Slider::get());
 
         $data['slider'] = Collect(Slider::orderBy('id', 'desc')->take(3)->get()->toArray());
         $data['banners'] = Collect(Banner::orderBy('id', 'desc')->get()->toArray());
@@ -298,8 +313,24 @@ class SportController extends Controller
         $data['promos'] = Collect(Promo::orderBy('rating', 'desc')->take(3)->get()->toArray());
         $data['news'] = Collect(News::orderBy('id', 'asc')->where('slider', 1)->take(3)->get()->toArray());
         $data['coefficients'] = $games;
+        $data['leagues_football'] = League::query()
+            ->orderBy('order')
+            ->whereType('football')
+            ->whereActive(true)
+            ->get();
+        $data['leagues_basketball'] = League::query()
+            ->orderBy('order')
+            ->whereType('basketball')
+            ->whereActive(true)
+            ->get();
+        $data['leagues_tennis'] = League::query()
+            ->orderBy('order')
+            ->whereType('tennis')
+            ->whereActive(true)
+            ->get();
         return view('home', compact('data'));
     }
+
 
     public function adminLogin(Request $request)
     {

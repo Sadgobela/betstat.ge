@@ -6,6 +6,7 @@ use App\Http\Requests\StoreNewsRequest;
 use App\Http\Requests\StoreTenantRequest;
 use App\Http\Requests\UpdateTenantRequest;
 use App\Models\Poll;
+use App\Models\PollAnswer;
 use App\Models\User;
 use App\Notifications\TenantInviteNotification;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -39,13 +40,17 @@ class UserController extends Controller
         return view('admin.user.index', compact('data'));
     }
 
-    public function pollVote(StoreNewsRequest $request)
+    public function pollVote(Request $request)
     {
-        $user = User::where('id', $request->input('user_id'))->first();
-        if (!$user->poll) {
-            User::where('id', $request->input('user_id'))->update(array('poll' => $request->input('answer')));
-            Poll::where('answer', $request->input('answer'))->increment('count');
+        $user = auth()->user();
+
+        if ($user->pollQuestions()->where('poll_question_id', $request->input('question'))->exists()){
+            return;
         }
+
+        $user->pollQuestions()->attach($request->input('question'));
+        PollAnswer::whereId($request->input('answer'))->increment('count');
+
     }
 
     public function checkUserExist(Request $request) {

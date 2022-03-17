@@ -43,6 +43,12 @@ Route::post('sliderRemovePicture', [App\Http\Controllers\SliderController::class
     Route::resource('sport',\App\Http\Controllers\SportController::class);
     Route::resource('p2p',\App\Http\Controllers\P2pController::class);
     Route::resource('banners',\App\Http\Controllers\BannersController::class);
+    Route::resource('leagues',\App\Http\Controllers\LeaguesController::class);
+    Route::post('leagues/toggle-active',[\App\Http\Controllers\LeaguesController::class, 'toggleActive'])->name('leagues.toggle-active');
+    Route::resource('poll-questions',\App\Http\Controllers\PollController::class);
+    Route::resource('poll-answers',\App\Http\Controllers\PollAnswerController::class);
+    Route::post('poll-question/toggle-active',[\App\Http\Controllers\PollController::class, 'toggleActive'])->name('poll.toggle-active');
+
 });
 
 

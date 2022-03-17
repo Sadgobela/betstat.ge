@@ -14,18 +14,28 @@
                             <input type="text" value="{{$sport['game']->type}}" name="type" style="display: none">
                             <div class="form-group row">
                                 <div class="col-md-4">
-                                    <input id="homeTeam" type="text"
-                                           class="form-control" name="homeTeam"
-                                           value="{{$sport['game']->home_team}}"
-                                           placeholder="Home Team"
-                                           autocomplete="homeTeam">
+{{--                                    <input id="homeTeam" type="text"--}}
+{{--                                           class="form-control" name="homeTeam"--}}
+{{--                                           value="{{$sport['game']->home_team}}"--}}
+{{--                                           placeholder="Home Team"--}}
+{{--                                           autocomplete="homeTeam">--}}
+                                    <select class="form-control"  id="select_leagues_home_team" name="homeTeam">
+                                        @foreach($teams as $team)
+                                            <option {{ ($team->name == $sport['game']->home_team) ? 'selected' : '' }}  value="{{ $team->name }}">{{ $team->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <input id="awayTeam" type="text"
-                                           class="form-control" name="awayTeam"
-                                           value="{{$sport['game']->away_team}}"
-                                           placeholder="Away Team"
-                                           autocomplete="awayTeam">
+{{--                                    <input id="awayTeam" type="text"--}}
+{{--                                           class="form-control" name="awayTeam"--}}
+{{--                                           value="{{$sport['game']->away_team}}"--}}
+{{--                                           placeholder="Away Team"--}}
+{{--                                           autocomplete="awayTeam">--}}
+                                    <select class="form-control"  id="select_leagues_away_team" name="awayTeam">
+                                        @foreach($teams as $team)
+                                            <option {{ ($team->name == $sport['game']->away_team) ? 'selected' : '' }}  value="{{ $team->name }}">{{ $team->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="col-md-4">
                                     <input id="date" type="datetime-local"
@@ -38,21 +48,10 @@
                             <div class="form-group row">
                                 <div class="col-md-4">
                                     @if($sport['game']->type == 'football')
-                                        <select class="form-control" id="car" name="cat">
-                                            <option value="პრემიერ ლიგა"  @if ($sport['game']->cat === 'პრემიერ ლიგა') selected="selected"
-                                                @endif>პრემიერ ლიგა</option>
-                                            <option value="ლა ლიგა" @if ($sport['game']->cat === 'ლა ლიგა') selected="selected"
-                                                @endif>ლა ლიგა</option>
-                                            <option value="ბუნდეს ლიგა" @if ($sport['game']->cat === 'ბუნდეს ლიგა') selected="selected"
-                                                @endif>ბუნდეს ლიგა</option>
-                                            <option value="სერია ა" @if ($sport['game']->cat === 'სერია ა') selected="selected"
-                                                @endif>სერია ა</option>
-                                            <option value="ჩემპიონთა ლიგა" @if ($sport['game']->cat === 'ჩემპიონთა ლიგა') selected="selected"
-                                                @endif>ჩემპიონთა ლიგა</option>
-                                            <option value="ევროპის ლიგა" @if ($sport['game']->cat === 'ევროპის ლიგა') selected="selected"
-                                                @endif>ევროპის ლიგა</option>
-                                            <option value="საფრანგეთის ლიგა 1" @if ($sport['game']->cat === 'საფრანგეთის ლიგა 1') selected="selected"
-                                                @endif>საფრანგეთის ლიგა 1</option>
+                                        <select  class="form-control" id="select_leagues" name="cat">
+                                            @foreach($leagues as $league)
+                                                <option @if ($sport['game']->cat === $league->name) selected="selected" @endif  value="{{ $league->name }}">{{ $league->name }}</option>
+                                            @endforeach
                                         </select>
                                     @endif
                                     @if($sport['game']->type == 'basketball')
@@ -83,6 +82,12 @@
                                            value="{{$sport['game']->link}}"
                                            class="form-control" name="link"
                                            autocomplete="date">
+                                </div>
+                                <div class="col-md-4">
+                                    <input id="end_date" type="datetime-local"
+                                           value="{{date('Y-m-d\TH:i:s', strtotime($sport['game']->end_date))}}"
+                                           class="form-control" name="end_date"
+                                           autocomplete="end_date">
                                 </div>
                             </div>
 
@@ -536,4 +541,22 @@
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+
+      <script>
+        $(document).ready(function() {
+            $('#select_leagues').select2({
+                theme:"classic"
+            });
+            $('#select_leagues_away_team').select2({
+                theme:"classic"
+            });
+            $('#select_leagues_home_team').select2({
+                theme:"classic"
+            });
+
+        });
+
+    </script>
 @endsection

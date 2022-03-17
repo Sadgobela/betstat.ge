@@ -19,8 +19,14 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
+{{--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />--}}
+
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>--}}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js" defer></script>
+
 
 </head>
 <body>
@@ -75,6 +81,25 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('banners.index') }}">Banners</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('leagues.index') }}">Leagues</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Poll
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('poll-questions.index') }}">Poll Questions</a>
+                                <a class="dropdown-item" href="{{ route('poll-answers.index') }}">Poll Answers</a>
+{{--                                <a class="dropdown-item" href="{{ route('p2p.index', ['cat=backgammon']) }}">Backgammon</a>--}}
+{{--                                <a class="dropdown-item" href="{{ route('p2p.index', ['cat=domino']) }}">Domino</a>--}}
+                            </div>
+                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="{{ route('poll-questions.index') }}">poll</a>--}}
+{{--                        </li>--}}
 {{--                        @endauth--}}
                     </ul>
 
@@ -108,6 +133,9 @@
             @yield('content')
         </main>
     </div>
+
+    @yield('js')
+
 </body>
 
 </html>

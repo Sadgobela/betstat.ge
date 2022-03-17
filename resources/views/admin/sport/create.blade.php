@@ -13,16 +13,26 @@
                             <input type="text" value="{{$_GET['type']}}" name="type" style="display: none">
                             <div class="form-group row">
                                 <div class="col-md-4">
-                                    <input id="homeTeam" type="text"
-                                           class="form-control" name="homeTeam"
-                                           placeholder="Home Team"
-                                           autocomplete="homeTeam">
+{{--                                    <input id="homeTeam" type="text"--}}
+{{--                                           class="form-control" name="homeTeam"--}}
+{{--                                           placeholder="Home Team"--}}
+{{--                                           autocomplete="homeTeam">--}}
+                                    <select class="form-control"  id="select_leagues_home_team" name="homeTeam">
+                                        @foreach($teams as $team)
+                                            <option  value="{{ $team->name }}">{{ $team->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <input id="awayTeam" type="text"
-                                           class="form-control" name="awayTeam"
-                                           placeholder="Away Team"
-                                           autocomplete="awayTeam">
+{{--                                    <input id="awayTeam" type="text"--}}
+{{--                                           class="form-control" name="awayTeam"--}}
+{{--                                           placeholder="Away Team"--}}
+{{--                                           autocomplete="awayTeam">--}}
+                                    <select class="form-control"  id="select_leagues_away_team" name="awayTeam">
+                                        @foreach($teams as $team)
+                                            <option  value="{{ $team->name }}">{{ $team->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="col-md-4">
                                     <input id="date" type="datetime-local"
@@ -33,14 +43,11 @@
                             <div class="form-group row">
                                 <div class="col-md-4">
                                     @if($_GET['type'] == 'football')
-                                    <select class="form-control" id="car" name="cat">
-                                        <option value="პრემიერ ლიგა" selected>პრემიერ ლიგა</option>
-                                        <option value="ლა ლიგა">ლა ლიგა</option>
-                                        <option value="ბუნდეს ლიგა">ბუნდეს ლიგა</option>
-                                        <option value="სერია ა">სერია ა</option>
-                                        <option value="ჩემპიონთა ლიგა">ჩემპიონთა ლიგა</option>
-                                        <option value="ევროპის ლიგა">ევროპის ლიგა</option>
-                                        <option value="საფრანგეთის ლიგა 1">საფრანგეთის ლიგა 1</option>
+
+                                    <select class="form-control"  id="select_leagues" name="cat">
+                                        @foreach($leagues as $league)
+                                            <option  value="{{ $league->name }}">{{ $league->name }}</option>
+                                        @endforeach
                                     </select>
                                     @endif
                                     @if($_GET['type'] == 'basketball')
@@ -63,6 +70,12 @@
                                            placeholder="link"
                                            class="form-control" name="link"
                                            autocomplete="date">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <input id="end_date" type="datetime-local"
+                                           class="form-control" name="end_date"
+                                           autocomplete="end_date">
                                 </div>
                             </div>
 {{--                                {{$casino}}--}}
@@ -316,6 +329,27 @@
     </div>
 
 @endsection
+
+@section('js')
+
+      <script>
+        $(document).ready(function() {
+            $('#select_leagues').select2({
+                theme:"classic"
+            });
+            $('#select_leagues_away_team').select2({
+                theme:"classic"
+            });
+            $('#select_leagues_home_team').select2({
+                theme:"classic"
+            });
+
+        });
+
+    </script>
+@endsection
+
+
 
 
 

@@ -13,9 +13,11 @@ class AddDomainToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('domain')->nullable();
-        });
+        if (! Schema::hasColumn('users','domain')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->string('domain')->nullable();
+            });
+        }
     }
 
     /**

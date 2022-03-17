@@ -31,6 +31,7 @@
                                 <th>Home Team</th>
                                 <th>Away Team</th>
                                 <th>Date</th>
+                                <th>End Date</th>
                                 <th style="width: 130px"></th>
                             </tr>
                             </thead>
@@ -43,6 +44,7 @@
                                     <td>{{ $sport->home_team}}</td>
                                     <td>{{ $sport->away_team}}</td>
                                     <td>{{ $sport->date}}</td>
+                                    <td>{{ $sport->end_date}}</td>
                                     <td>
                                         <a href="{{ route('sport.edit', $sport->id)}}"
                                             class="btn btn-sm btn-info">Edit</a>

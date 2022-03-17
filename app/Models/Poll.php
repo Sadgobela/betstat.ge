@@ -18,6 +18,7 @@ class Poll extends Authenticatable
      * @var array
      */
     protected $table = 'poll';
+
     protected $fillable = [
         'user_id',
         'answer',
