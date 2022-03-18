@@ -13,26 +13,33 @@
                             <input type="text" value="{{$_GET['type']}}" name="type" style="display: none">
                             <div class="form-group row">
                                 <div class="col-md-4">
-{{--                                    <input id="homeTeam" type="text"--}}
-{{--                                           class="form-control" name="homeTeam"--}}
-{{--                                           placeholder="Home Team"--}}
-{{--                                           autocomplete="homeTeam">--}}
-                                    <select class="form-control"  id="select_leagues_home_team" name="homeTeam">
-                                        @foreach($teams as $team)
-                                            <option  value="{{ $team->name }}">{{ $team->name }}</option>
-                                        @endforeach
-                                    </select>
+                                    @if(request('type') == 'football')
+                                        <select class="form-control"  id="select_leagues_home_team" name="homeTeam">
+                                            @foreach($teams as $team)
+                                                <option  value="{{ $team->name }}">{{ $team->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    @else
+                                        <input id="homeTeam" type="text"
+                                               class="form-control" name="homeTeam"
+                                               placeholder="Home Team"
+                                               autocomplete="homeTeam">
+                                    @endif
                                 </div>
                                 <div class="col-md-4">
-{{--                                    <input id="awayTeam" type="text"--}}
-{{--                                           class="form-control" name="awayTeam"--}}
-{{--                                           placeholder="Away Team"--}}
-{{--                                           autocomplete="awayTeam">--}}
-                                    <select class="form-control"  id="select_leagues_away_team" name="awayTeam">
-                                        @foreach($teams as $team)
-                                            <option  value="{{ $team->name }}">{{ $team->name }}</option>
-                                        @endforeach
-                                    </select>
+                                    @if(request('type') == 'football')
+                                        <select class="form-control"  id="select_leagues_away_team" name="awayTeam">
+                                            @foreach($teams as $team)
+                                                <option  value="{{ $team->name }}">{{ $team->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    @else
+                                        <input id="awayTeam" type="text"
+                                               class="form-control" name="awayTeam"
+                                               placeholder="Away Team"
+                                               autocomplete="awayTeam">
+                                    @endif
+
                                 </div>
                                 <div class="col-md-4">
                                     <input id="date" type="datetime-local"
