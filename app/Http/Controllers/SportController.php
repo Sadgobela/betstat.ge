@@ -75,6 +75,7 @@ class SportController extends Controller
 
         $leagues = League::query()
             ->orderBy('order')
+            ->whereType('football')
             ->get();
 
         $teams = Team::query()->get();
@@ -197,6 +198,7 @@ class SportController extends Controller
         $sport['statistic'] = Statistic::where('game_id', '=', $id)->get();
         $leagues = League::query()
             ->orderBy('order')
+            ->whereType('football')
             ->get();
         $teams = Team::query()->get();
 
