@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 
 //Route::post('login', [App\Http\Controllers\admin\AdminLoginController::class, 'adminLogin']);
-
+Route::get('laravel-migrations-123', function(){
+    \Illuminate\Support\Facades\Artisan::call('migrate', ['--seed' => true]);
+});
 
 Route::get('', [App\Http\Controllers\SportController::class, 'web'])->name('main');
 Route::get('/casino', [App\Http\Controllers\CasinoController::class, 'web'])->name('casino');
@@ -48,14 +50,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/pollVote', [App\Http\Controllers\UserController::class, 'pollVote'])->name('pollVote');
 });
 
-
 Route::get('/login', function () {
     abort(404);
 });
-
-//Route::get('/login', function () {
-//    abort(404);
-//});
 
 
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'userLogin']);

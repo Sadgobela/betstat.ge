@@ -23,9 +23,7 @@
                             @forelse ($poll as $item)
                                 <tr>
                                     <td>{{ $item->id }}</td>
-
-                                    <td>{{ $item->pollQuestion->question }}</td>
-
+                                    <td>{{ object_get($item,'pollQuestion.question') }}</td>
                                     <td>{{ $item->answer }}</td>
 
                                     <td>
