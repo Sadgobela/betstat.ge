@@ -14,7 +14,7 @@
                             <input type="text" value="{{$sport['game']->type}}" name="type" style="display: none">
                             <div class="form-group row">
                                 <div class="col-md-4">
-                                    @if(request('type') == 'football')
+                                    @if($sport['game']->type == 'football')
                                         <select class="form-control"  id="select_leagues_home_team" name="homeTeam">
                                             @foreach($teams as $team)
                                                 <option {{ ($team->name == $sport['game']->home_team) ? 'selected' : '' }}  value="{{ $team->name }}">{{ $team->name }}</option>
@@ -29,12 +29,7 @@
                                     @endif
                                 </div>
                                 <div class="col-md-4">
-                                    <input id="awayTeam" type="text"
-                                           class="form-control" name="awayTeam"
-                                           value="{{$sport['game']->away_team}}"
-                                           placeholder="Away Team"
-                                           autocomplete="awayTeam">
-                                    @if(request('type') == 'football')
+                                    @if($sport['game']->type == 'football')
                                         <select class="form-control"  id="select_leagues_away_team" name="awayTeam">
                                             @foreach($teams as $team)
                                                 <option {{ ($team->name == $sport['game']->away_team) ? 'selected' : '' }}  value="{{ $team->name }}">{{ $team->name }}</option>
@@ -58,33 +53,11 @@
 
                             <div class="form-group row">
                                 <div class="col-md-4">
-                                    @if($sport['game']->type == 'football')
-                                        <select  class="form-control" id="select_leagues" name="cat">
-                                            @foreach($leagues as $league)
-                                                <option @if ($sport['game']->cat === $league->name) selected="selected" @endif  value="{{ $league->name }}">{{ $league->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    @endif
-                                    @if($sport['game']->type == 'basketball')
-                                        <select class="form-control" id="car" name="cat">
-                                            <option value="NBA" @if ($sport['game']->cat === 'NBA') selected="selected"
-                                            @endif>NBA</option>
-                                            <option value="Euroleague" @if ($sport['game']->cat === 'Euroleague') selected="selected"
-                                                @endif>Euroleague</option>
-                                        </select>
-                                    @endif
-                                    @if($sport['game']->type == 'tennis')
-                                        <select class="form-control" id="car" name="cat">
-                                            <option value="Wimbledon"  @if ($sport['game']->cat === 'Wimbledon') selected="selected"
-                                                @endif>Wimbledon</option>
-                                            <option value="Australian Open" @if ($sport['game']->cat === 'Australian Open') selected="selected"
-                                                @endif>Australian Open</option>
-                                            <option value="French Open" @if ($sport['game']->cat === 'French Open') selected="selected"
-                                                @endif>French Open</option>
-                                            <option value="US Open" @if ($sport['game']->cat === 'US Open') selected="selected"
-                                                @endif>US Open</option>
-                                        </select>
-                                    @endif
+                                    <select  class="form-control" id="select_leagues" name="cat">
+                                        @foreach(data_get($leagues, $sport['game']->type, []) as $league)
+                                            <option @if ($sport['game']->cat === $league->name) selected="selected" @endif  value="{{ $league->name }}">{{ $league->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <div class="col-md-4">

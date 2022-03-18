@@ -49,28 +49,11 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-4">
-                                    @if($_GET['type'] == 'football')
-
                                     <select class="form-control"  id="select_leagues" name="cat">
-                                        @foreach($leagues as $league)
+                                        @foreach(data_get($leagues, request('type'), []) as $league)
                                             <option  value="{{ $league->name }}">{{ $league->name }}</option>
                                         @endforeach
                                     </select>
-                                    @endif
-                                    @if($_GET['type'] == 'basketball')
-                                    <select class="form-control" id="car" name="cat">
-                                        <option value="NBA" selected>NBA</option>
-                                        <option value="Euroleague">Euroleague</option>
-                                    </select>
-                                    @endif
-                                    @if($_GET['type'] == 'tennis')
-                                    <select class="form-control" id="car" name="cat">
-                                        <option value="Wimbledon" selected>Wimbledon</option>
-                                        <option value="Australian Open">Australian Open</option>
-                                        <option value="French Open">French Open</option>
-                                        <option value="US Open">US Open</option>
-                                    </select>
-                                    @endif
                                 </div>
                                 <div class="col-md-4">
                                     <input id="link" type="text"
@@ -350,9 +333,7 @@
             $('#select_leagues_home_team').select2({
                 theme:"classic"
             });
-
         });
-
     </script>
 @endsection
 
