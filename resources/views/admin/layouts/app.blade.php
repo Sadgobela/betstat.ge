@@ -49,6 +49,9 @@
                             <a class="nav-link" href="{{ route('sport.index') }}">Sport</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('leagues.index') }}">Leagues</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('news.index') }}">News</a>
                         </li>
                         <li class="nav-item">
@@ -80,9 +83,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('banners.index') }}">Banners</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('leagues.index') }}">Leagues</a>
                         </li>
 
                         <li class="nav-item dropdown">
