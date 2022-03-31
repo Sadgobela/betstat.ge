@@ -144,17 +144,6 @@ $(document).ready(function(){
         $('.successPopupMsg').show();
     });
 
-
-
-
-    //passCheckJs
-
-
-
-    //endPassCheckJs
-
-
-
     //add JS Class active on page refresh
     $(".betStat-navBar ul a")
         .click(function(e) {
@@ -195,5 +184,4 @@ $(document).ready(function(){
     } else  {
         $('.promotions-button').show();
     }
-
 });

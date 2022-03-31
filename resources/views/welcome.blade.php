@@ -1937,7 +1937,7 @@
                     <div class="info-desc">
                         <p>info@betstat.ge</p>
                         <p>მისამართი: ვაჟა ფშაველას N1</p>
-                        <p>ტელ: +995 555 555 000 </p>
+                        <p>ტელ:  </p>
                     </div>
                 </div>
                 <div class="info contact">

@@ -32,7 +32,13 @@
                         <div class="box-description-img" style="background: url('{{asset('uploads/promo/logos') . '/' . $promo['logo']}}')
                             no-repeat center;background-size: 100%"></div>
                         <div class="box-description-text">{{$promo['title']}}</div>
-                        <div class="box-description-rate">{{$promo['rating']}}</div>
+                        <div class="box-description-rate
+                                @if($promo['rating'] <= 3) yellow
+                                    @elseif($promo['rating'] > 3 && $promo['rating'] <= 7) green
+                                    @elseif($promo['rating'] > 7 && $promo['rating'] <= 9) blue
+                                    @elseif($promo['rating'] > 9) purple
+                                @endif">{{$promo['rating']}}
+                        </div>
                     </div>
                 </a>
             @endforeach
@@ -65,11 +71,9 @@
 
                 let selectedValue = new URLSearchParams(window.location.search).get('cat')
 
-                console.log(selectedValue,'minichebamde')
                 if(selectedValue === ''){
                     selectedValue = 'ყველა';
                 }
-                console.log(selectedValue,'minichebis mere')
                 $styledSelect.text(selectedValue)[0].innerHTML;
                 // $styledSelect.text($this.children('option').eq(0).text());
                 // Insert an unordered list after the styled div and also cache the list
@@ -148,7 +152,12 @@
                                     '<div class="box-description-img" style="background: url(\'{{asset('uploads/promo/logos')}}' + '/' + x['logo'] + '\') no-repeat center;background-size:100%;">' +
                                 '</div>' +
                                     '<div class="box-description-text">' + x['title'] + '</div>' +
-                                    '<div class="box-description-rate">' + x['rating'] + '</div>' +
+                                    '<div class="box-description-rate' +
+                            '@if(isset($promo['rating']) <= 3) yellow ' +
+                            '@elseif(isset($promo['rating']) > 3 && isset($promo['rating']) <= 7) green' +
+                            '@elseif(isset($promo['rating']) > 7 && isset($promo['rating']) <= 9) blue' +
+                            '@elseif(isset($promo['rating']) > 9) purple' +
+                            '@endif">' + x['rating'] + '</div>' +
                                 '</div>'+
                             '</a>');
                         });

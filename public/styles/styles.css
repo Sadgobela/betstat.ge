@@ -983,7 +983,6 @@ body.promotions-inner main {
 }
 .league-content .league-content-leftSide .league-logo {
     position: absolute;
-    top: 8px;
     left: 18px;
 }
 .league-content .league-content-leftSide .league-background {
@@ -2550,17 +2549,39 @@ body.promotions-inner main {
     position: relative;
     width: 47px;
     height: 50px;
-    border: 1px solid #FFE600;
     box-sizing: border-box;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 4px;
     padding-top: 25px;
     text-align: center;
 }
+.promotions .promotions-boxes .box .box-description-rate.yellow {
+    border: 1px solid #FFA800;
+}
+.promotions .promotions-boxes .box .box-description-rate.green {
+    border: 1px solid #00BE13;
+}
+.promotions .promotions-boxes .box .box-description-rate.blue {
+    border: 1px solid #0075FF;
+}
+.promotions .promotions-boxes .box .box-description-rate.purple {
+    border: 1px solid #BD00FF;
+}
+.promotions .promotions-boxes .box .box-description-rate.yellow:before {
+    background: url("../images/promotions-rate-img-yellow.png");
+}
+.promotions .promotions-boxes .box .box-description-rate.green:before {
+    background: url("../images/promotions-rate-img-green.png");
+}
+.promotions .promotions-boxes .box .box-description-rate.blue:before {
+    background: url("../images/promotions-rate-img-blue.png");
+}
+.promotions .promotions-boxes .box .box-description-rate.purple:before {
+    background: url("../images/promotions-rate-img-purple.png");
+}
 
 .promotions .promotions-boxes .box .box-description-rate:before {
     content: '';
-    background: url("../images/promotions-rate-img.png");
     width: 17px;
     height: 15px;
     position: absolute;
