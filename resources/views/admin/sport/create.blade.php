@@ -14,11 +14,15 @@
                             <div class="form-group row">
                                 <div class="col-md-4">
                                     @if(request('type') == 'football')
-                                        <select class="form-control"  id="select_leagues_home_team" name="homeTeam">
+                                        <select onchange="inputGetStatus()" class="form-control"  id="select_leagues_home_team" name="homeTeam">
                                             @foreach($teams as $team)
                                                 <option  value="{{ $team->name }}">{{ $team->name }}</option>
                                             @endforeach
                                         </select>
+                                        <input onchange="inputGetStatus()" id="homeTeam" type="text" style="margin-top: 1rem;"
+                                               class="form-control" name="homeTeam"
+                                               placeholder="Home Team"
+                                               autocomplete="homeTeam">
                                     @else
                                         <input id="homeTeam" type="text"
                                                class="form-control" name="homeTeam"
@@ -28,11 +32,15 @@
                                 </div>
                                 <div class="col-md-4">
                                     @if(request('type') == 'football')
-                                        <select class="form-control"  id="select_leagues_away_team" name="awayTeam">
+                                        <select onchange="inputGetStatus()" class="form-control"  id="select_leagues_away_team" name="awayTeam">
                                             @foreach($teams as $team)
                                                 <option  value="{{ $team->name }}">{{ $team->name }}</option>
                                             @endforeach
                                         </select>
+                                        <input onchange="inputGetStatus()" id="awayTeam" type="text" style="margin-top: 1rem;"
+                                               class="form-control" name="awayTeam"
+                                               placeholder="Away Team"
+                                               autocomplete="awayTeam">
                                     @else
                                         <input id="awayTeam" type="text"
                                                class="form-control" name="awayTeam"
@@ -323,6 +331,21 @@
 @section('js')
 
       <script>
+          function inputGetStatus(){
+              let homeTeamInput = document.getElementById("homeTeam");
+              let awayTeamInput = document.getElementById("awayTeam");
+              let homeTeamSelect = document.getElementById("select_leagues_home_team");
+              let awayTeamSelect = document.getElementById("select_leagues_away_team");
+              if(homeTeamInput.value !== '' || homeTeamInput.value !== ''){
+                  homeTeamSelect.setAttribute("disabled", "disabled");
+                  awayTeamSelect.setAttribute("disabled", "disabled");
+              } else {
+                  homeTeamSelect.removeAttribute("disabled");
+                  awayTeamSelect.removeAttribute("disabled");
+                  homeTeamInput.setAttribute("disabled", "disabled");
+                  awayTeamInput.setAttribute("disabled", "disabled");
+              }
+          }
         $(document).ready(function() {
             $('#select_leagues').select2({
                 theme:"classic"
@@ -333,6 +356,9 @@
             $('#select_leagues_home_team').select2({
                 theme:"classic"
             });
+
+
+            // if(homeTeamInput)
         });
     </script>
 @endsection
