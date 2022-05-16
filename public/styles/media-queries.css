@@ -1,0 +1,196 @@
+@media only screen and (max-width: 1597px) {
+    .container {
+        width: 1200px;
+        display: block;
+    }
+    .betStat-leftMenu .betStat-navBar ul li a{
+        margin-right: 36px;
+    }
+    .betStat-header-carousel-inner-third{
+        display: none;
+    }
+    .betStat-header-carousel-inner-first .owl-carousel-poster,
+    .betStat-header-carousel-inner-second .owl-carousel-poster{
+        width: 592px;
+        height: 272px;
+    }
+    .betStat-header-carousel-inner{
+        height: 449px;
+    }
+    .betStat-header-carousel-inner-first, .betStat-header-carousel-inner-second, .betStat-header-carousel-inner-third{
+        width: 592px;
+        height: 391px;
+    }
+    .banner-table.rightSide{
+        display: flex;
+    }
+    .banner-table.rightSide .banner-table-first{
+        width: 380px;
+        margin-right: 30px;
+    }
+    .banner-table.rightSide .banner-table-first:last-child{
+        margin-right: 0;
+    }
+    .betStat-leftMenu{
+        width: 939px;
+    }
+    .betStat-header-carousel-inner .owl-carousel{
+        height: 272px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-first .owl-carousel .owl-dots,
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-second .owl-carousel .owl-dots {
+        top: 292px;
+        height: 6px;
+        align-items: flex-start;
+    }
+    .owl-carousel .owl-stage-outer{
+        height: 391px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-first .owl-carousel .owl-carousel-description .owl-carousel-rating{
+        top: 18px;
+    }
+
+
+    .promotions .promotions-top{
+        width: 1200px;
+    }
+
+    .promotions .promotions-boxes .box{
+        width: 592px;
+        height: 419px;
+    }
+
+    .promotions .promotions-boxes .box .box-top{
+        padding: 17px 21px 15px 18px;
+    }
+    .promotions .promotions-boxes .box .box-image{
+        width: 592px;
+        height: 272px;
+    }
+    .promotions .promotions-boxes .box .box-description{
+        padding: 18px 22px 0 18px;
+    }
+    .promotions .promotions-boxes .box .box-description-img{
+        width: 54px;
+        height: 54px;
+        margin-right: 14px;
+    }
+    .promotions .promotions-boxes .box .box-description-text{
+        width: 420px;
+        height: 40px;
+        line-height: 20px;
+        margin-right: 17px;
+    }
+    .promotions .promotions-boxes .box:nth-of-type(3n){
+        margin-right: 14px;
+    }
+    .promotions .promotions-boxes .box:nth-of-type(2n){
+        margin-right: 0;
+    }
+    .promotions-main{
+        display: flex;
+    }
+
+    .promotions-inner .promotions-inner-page{
+        width: 1200px;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-header{
+        width: 1200px;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-header-right{
+        background: url("../images/promotions-inner-page-header-right-laptop.png") no-repeat;
+        width: 300px;
+        right: 0;
+        top: 0;
+        border-radius: 0 10px 0 0;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-header-left {
+        background: url("../images/promotions-inner-page-header-left-laptop.png") no-repeat;
+        width: 300px;
+        border-radius: 10px 0 0 0;
+        top: 0;
+        left: 0;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-header .promotions-inner-page-header-logo{
+        left: 113px;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-header .promotions-inner-page-header-rating{
+        right: 152px;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-content{
+        width: 1200px;
+        padding: 35px 50px 47px;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-content h1{
+        margin: 0 0 24px;
+    }
+
+    .betStat-header-news .betStat-header-news-inner .betStat-header-news-rightSide.desktop-laptop-version{
+        display: flex;
+    }
+    .betStat-header-news .betStat-header-news-inner .betStat-header-news-rightSide.desktop-large-version{
+        display: none;
+    }
+
+    .betStat-header-news .betStat-header-news-inner{
+        display: flex;
+    }
+    .betStat-header-news .betStat-header-news-inner .betStat-header-news-leftSide{
+        width: 795px;
+        margin-right: 18px;
+    }
+    .betStat-header-news .betStat-header-news-inner .betStat-header-news-rightSide .box{
+        margin-right: 0;
+    }
+    .news .main-news-top{
+        width: 1200px;
+    }
+    .news .news-categories-boxes{
+        width: 1200px;
+    }
+    .news .news-categories-boxes .box{
+        width: 592px;
+        height: 391px;
+    }
+    .news .news-categories-boxes .box .box-img{
+        width: 592px;
+        height: 391px;
+    }
+    .news .news-categories-boxes .box .box-img .news-top .news-caption{
+        width: 100px;
+        height: 27px;
+        font-size: 11px;
+    }
+    .news .news-btn{
+        margin: 20px auto 0;
+    }
+
+    .news-inner.promotions-inner .promotions-inner-page .promotions-inner-page-content{
+        padding: 50px 30px 40px 40px;
+    }
+    .news-inner.promotions-inner .promotions-inner-page .news-header-img{
+        width: 574px;
+        height: 379px;
+        margin-right: 29px;
+    }
+    .news-inner.promotions-inner .promotions-inner-page .promotions-inner-page-content h1{
+        width: 508px;
+    }
+    .news-inner.promotions-inner .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-headline{
+        width: 526px;
+        margin: 0 0 58px;
+    }
+    .userPage .user-test{
+        width: 1200px;
+    }
+    .userPage .user-content{
+        width: 1200px;
+    }
+    .userPage .user-content .user-content-left{
+        width: 728px;
+    }
+    .userPage.changePasswordPage .user-content .user-content-left{
+        width: 100%;
+    }
+}
+

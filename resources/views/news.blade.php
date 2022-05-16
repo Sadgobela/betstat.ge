@@ -19,7 +19,7 @@
                 </a>
                 @endforeach
                 @endif
-                <div class="betStat-header-news-rightSide">
+                <div class="betStat-header-news-rightSide  desktop-large-version">
                     @if(isset($data['newsData2']))
                     @foreach($data['newsData2'] as $news)
                         <a href="{{ route('newsInner', ['id' => $news['id']]) }}" class="box" style="background: url('{{asset('uploads/news') . '/' . $news['picture']}}') no-repeat center">
@@ -28,13 +28,30 @@
                                     <div class="news-caption d-flex-spaceCenter">{{$news['category']}}</div>
                                     <div class="news-caption-dateText">{{date('d.m.y', strtotime($news['created_at']))}}</div>
                                 </div>
-                                <div class="news-bottom d-flex-spaceCenter">
+                                <div class="news-bottom">
                                     {{$news['title']}}
                                 </div>
                             </div>
                         </a>
                     @endforeach
                         @endif
+                </div>
+                <div class="betStat-header-news-rightSide desktop-laptop-version">
+                    @if(isset($data['newsData4']))
+                        @foreach($data['newsData4'] as $news)
+                            <a href="{{ route('newsInner', ['id' => $news['id']]) }}" class="box" style="background: url('{{asset('uploads/news') . '/' . $news['picture']}}') no-repeat center">
+                                <div class="betStat-header-news-rightSide-img">
+                                    <div class="news-top d-flex-spaceBetween">
+                                        <div class="news-caption d-flex-spaceCenter">{{$news['category']}}</div>
+                                        <div class="news-caption-dateText">{{date('d.m.y', strtotime($news['created_at']))}}</div>
+                                    </div>
+                                    <div class="news-bottom">
+                                        {{$news['title']}}
+                                    </div>
+                                </div>
+                            </a>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </section>

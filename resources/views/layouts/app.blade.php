@@ -5,7 +5,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('meta-tag')
     <link rel="stylesheet" type="text/css" href="{{ asset('styles/styles.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('styles/fonts.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles/media-queries.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('styles/owl.carousel.min.css') }}">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
     <script src="{{ asset('js/jquery.min.js') }}"></script>
@@ -218,6 +218,10 @@
                     <div></div>
                 </div>
             </div>
+        </div>
+        <div class="allRights">
+            <p>ყველა უფლება დაცულია © 2021</p>
+            <span>betstat.ge</span>
         </div>
         <!-- TOP.GE ASYNC COUNTER CODE -->
         <div id="top-ge-counter-container" data-site-id="115563"></div>

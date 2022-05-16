@@ -140,6 +140,7 @@ class NewsController extends Controller
 
         $data['newsData1'] = News::orderBy('id', 'desc')->where('main', 1)->take(1)->get();
         $data['newsData2'] = News::orderBy('id', 'desc')->where('main', 1)->skip(1)->take(4)->get();
+        $data['newsData4'] = News::orderBy('id', 'desc')->where('main', 1)->skip(1)->take(2)->get();
 //        $data['newsData3'] = News::orderBy('id', 'desc')->orWhereNull('main')->take(9)->get();
         if ($_GET && $_GET['cat']) {
 //            dd($_GET['cat']);

@@ -44,7 +44,7 @@
             @endforeach
             </div>
         </section>
-        <a href="" class="promotions-button d-flex-spaceCenter">
+        <a href="" class="promotions-button">
             მეტი
         </a>
     </main>

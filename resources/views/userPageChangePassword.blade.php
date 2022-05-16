@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <body class="userPage">
+    <body class="userPage changePasswordPage">
     <main>
         <div class="user-test d-flex-spaceCenter">
             გვერდი სატესტო რეჟიმშია
@@ -43,20 +43,19 @@
                 </div>
             </div>
             <div class="user-content-right">
-                <div class="betStat-userNameInfo"
-                     @auth
-                     @if(Auth::user()->fb_id && Auth::user()->avatar)
-                     style="background: url('{{Auth::user()->avatar}}');background-size: 100%;"
-                     @elseif(!Auth::user()->fb_id && Auth::user()->avatar)
-                     style="background: url('uploads/users/{{Auth::user()->avatar}}');background-size: 100%;"
-                    @endif
-                    @endauth>
+                <div class="betStat-userNameInfo">
+{{--                     @auth--}}
+{{--                     @if(Auth::user()->fb_id && Auth::user()->avatar)--}}
+{{--                     style="background: url('{{Auth::user()->avatar}}');background-size: 100%;"--}}
+{{--                     @elseif(!Auth::user()->fb_id && Auth::user()->avatar)--}}
+{{--                     style="background: url('uploads/users/{{Auth::user()->avatar}}');background-size: 100%;"--}}
+{{--                    @endif--}}
+{{--                    @endauth>--}}
 
                 </div>
-                <p>{{'@' . Auth::getUser()->name}}</p>
-                <span>#{{Auth::getUser()->id}}</span>
+{{--                <p>{{'@' . Auth::getUser()->name}}</p>--}}
+{{--                <span>#{{Auth::getUser()->id}}</span>--}}
             </div>
-        </div>
     </main>
     <script>
         $(document).ready(function() {

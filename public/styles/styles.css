@@ -1,3 +1,5 @@
+@import "fonts.css";
+
 body {
     margin: 0;
     font-family: 'BPG Arial Caps';
@@ -123,25 +125,25 @@ body.promotions-inner main {
 }
 
 .d-flex-spaceBetween {
-    display: flex;
+    display: flex!important;
     align-items: center;
     justify-content: space-between;
 }
 
 .d-flex-spaceCenter {
-    display: flex;
+    display: flex!important;
     align-items: center;
     justify-content: center;
 }
 
 .d-flex-start {
-    display: flex;
+    display: flex!important;
     align-items: center;
     justify-content: flex-start;
 }
 
 .d-flex-end {
-    display: flex;
+    display: flex!important;
     align-items: center;
     justify-content: flex-end;
 }
@@ -210,6 +212,7 @@ body.promotions-inner main {
     height: 70px;
     border: 1px solid #627ADC;
     border-radius: 100%;
+    box-sizing: border-box;
 }
 
 .betStat-rightMenu.logged-out .betStat-userNameInfo {
@@ -2224,6 +2227,9 @@ body.promotions-inner main {
     flex-wrap: wrap;
     height: 524px;
 }
+.betStat-header-news .betStat-header-news-inner .betStat-header-news-rightSide.desktop-laptop-version{
+    display: none;
+}
 .betStat-header-news .betStat-header-news-inner .betStat-header-news-rightSide .box{
     width: 387px;
     height: 256px;
@@ -2272,7 +2278,6 @@ body.promotions-inner main {
     color: #FFFFFF;
     position: absolute;
     bottom: 16px;
-    height: 29px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -2372,7 +2377,6 @@ body.promotions-inner main {
     color: #FFFFFF;
     position: absolute;
     bottom: 22px;
-    height: 39px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -2601,6 +2605,9 @@ body.promotions-inner main {
     color: #FFFFFF;
     text-decoration: none;
     margin: 51px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -2628,6 +2635,8 @@ body.promotions-inner main {
     height: 340px;
     position: absolute;
     right: 0;
+    top: 0;
+    border-radius: 0 10px 0 0;
 }
 
 .promotions-inner .promotions-inner-page .promotions-inner-page-header {
@@ -3265,6 +3274,7 @@ input[type=file]::file-selector-button {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     padding-top: 15px;
+    box-sizing: border-box;
 }
 .userPage .user-content .user-content-right .betStat-userNameInfo{
     background: url("../images/userProfile-logo.png") center top no-repeat;
@@ -3307,6 +3317,9 @@ input[type=file]::file-selector-button {
     position: absolute;
     left: 0;
     margin: 9px auto 0;
+}
+.userPage.changePasswordPage .user-content .user-content-left {
+    width: 100%;
 }
 
 .forgotPasswordPopup{
@@ -3407,13 +3420,29 @@ footer .footer-inner .footer-inner-rightSide .youtube {
 
 footer .footer-desc {
     background: #242634;
-    height: 238px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+footer .footer-desc .allRights{
+    padding-top: 47px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 14px;
+    color: #B6B6B6;
+}
+footer .footer-desc .allRights span{
+    display: block;
+    margin-top: 8px;
+    font-size: 10px;
+    line-height: 12px;
+    color: #6F6F6F;
 }
 
 footer .footer-desc .footer-desc-content {
     padding: 22px 0 0;
     box-sizing: border-box;
     justify-content: space-between;
+    display: flex;
 }
 
 footer .footer-desc .footer-desc-content .info:first-child {
@@ -3742,5 +3771,6 @@ footer .footer-desc .footer-desc-content .info.league .info-desc div:nth-child(7
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 15px;
 }
+
