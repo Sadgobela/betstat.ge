@@ -3321,7 +3321,9 @@ input[type=file]::file-selector-button {
 .userPage.changePasswordPage .user-content .user-content-left {
     width: 100%;
 }
-
+.owl-carousel .owl-stage-outer{
+    border-radius: 10px;
+}
 .forgotPasswordPopup{
     display: none;
 }

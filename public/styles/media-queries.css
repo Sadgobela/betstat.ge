@@ -194,3 +194,229 @@
     }
 }
 
+@media only screen and (max-width: 1200px) {
+    .container{
+        width: 736px;
+    }
+    .betStat-leftMenu .betStat-navBar ul li a{
+        margin-right: 14px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .betStat-header{
+        height: 63px;
+    }
+    .betStat-rightMenu{
+        width: 132px;
+        height: 41px;
+    }
+    .betStat-rightMenu.logged-out .betStat-userLogo{
+        width: 32px;
+        height: 32px;
+        margin-left: 9px;
+        margin-right: 6px;
+        background-size: cover;
+    }
+    .betStat-rightMenu.logged-out .betStat-logInRegister a.logIn{
+        font-size: 11px;
+        line-height: 14px;
+    }
+    .betStat-rightMenu.logged-out .betStat-logInRegister a.register{
+        font-size: 9px;
+        line-height: 8px;
+        margin-top: 2px;
+    }
+    .betStat-header-carousel{
+        padding: 63px 0 0;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-first .owl-carousel .owl-carousel-description .owl-carousel-rating .head:after{
+        content: '';
+        background: url('../images/slider-rate-img.png') no-repeat;
+        width: 12px;
+        height: 11px;
+        background-size: 12px 11px;
+        display: block;
+        left: 6px;
+        position: absolute;
+        top: 1px;
+    }
+    .betStat-header-carousel-inner-third{
+        display: none;
+    }
+    .betStat-header-carousel-inner-first .owl-carousel-poster,
+    .betStat-header-carousel-inner-second .owl-carousel-poster{
+        width: 360px;
+        height: 165px;
+    }
+    .betStat-header-carousel-inner{
+        height: 315px;
+    }
+    .betStat-header-carousel-inner-first, .betStat-header-carousel-inner-second, .betStat-header-carousel-inner-third{
+        width: 360px;
+        height: 238px;
+    }
+    .banner-table.rightSide{
+        display: flex;
+    }
+    .banner-table.rightSide .banner-table-first{
+        width: 230px;
+        height: 276px;
+        margin-right: 22px;
+    }
+    .banner-table.rightSide .banner-table-first:last-child{
+        margin-right: 0;
+    }
+    .betStat-leftMenu{
+        width: 604px;
+    }
+    .betStat-header-carousel-inner .owl-carousel{
+        height: 165px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-first .owl-carousel .owl-dots,
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-second .owl-carousel .owl-dots {
+        top: 178px;
+        height: 6px;
+        align-items: flex-start;
+    }
+    .owl-carousel .owl-stage-outer{
+        height: 238px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-first .owl-carousel .owl-carousel-description .owl-carousel-rating{
+        top: 13px;
+    }
+    .betStat-header-carousel-inner .owl-carousel .owl-dots{
+        width: 108px;
+    }
+    .betStat-header-carousel-inner .owl-carousel button.owl-dot{
+        width: 28px;
+        height: 4px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-first .owl-carousel .owl-carousel-description .owl-carousel-rating .head{
+        width: 40px;
+        height: 17px;
+        font-size: 9px;
+        padding-left: 18px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-first .owl-carousel .owl-carousel-description .owl-carousel-rating .bottom{
+        width: 40px;
+        height: 32px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-first .owl-carousel .owl-carousel-description .owl-carousel-description-text span{
+        top: 9px;
+        left: 10px;
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-first .owl-carousel .owl-carousel-description{
+        padding-top: 24px;
+    }
+    .betStat-header-carousel-inner .owl-carousel .owl-carousel-description .owl-carousel-description-img{
+        width: 42px;
+        height: 42px;
+        margin-right: 9px;
+        margin-left: 10px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-first .owl-carousel .owl-carousel-description .owl-carousel-description-text p {
+        font-size: 12px;
+        line-height: 14px;
+        width: 215px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-second .owl-carousel .owl-carousel-description{
+        margin-top: 31px
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-second .owl-carousel .owl-carousel-description .owl-carousel-description-text {
+        margin-left: 12px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-second .owl-carousel .owl-carousel-description .owl-carousel-description-text p{
+        font-size: 13px;
+        width: 318px;
+        height: 30px;
+        margin-left: 10px;
+    }
+    .betStat-header-carousel-inner .betStat-header-carousel-inner-second .owl-carousel .owl-carousel-description .owl-carousel-description-text:before{
+        height: 26px;
+        top: 2px;
+    }
+    .main-table.leftSide{
+        width: 736px;
+    }
+    .main-table.leftSide .main-table-menu .tab{
+        width: 230px;
+        height: 50px;
+        border-radius: 5px;
+    }
+    .main-table.leftSide .main-table-menu .match-text{
+        width: 230px;
+        height: 50px;
+        padding-left: 54px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+    .main-table.leftSide .main-table-menu .tab:before{
+        width: 25px;
+        height: 25px;
+        top: 13px;
+        left: 16px;
+    }
+    .main-table.leftSide .main-table-menu .football:before {
+        background: url('../images/football-ball-tablet.png') no-repeat;
+    }
+    .main-table.leftSide .main-table-menu .basketball:before {
+        background: url('../images/basketball-ball-tablet.png') no-repeat;
+    }
+    .main-table.leftSide .main-table-menu .tennis:before {
+        background: url('../images/tennis-ball-tablet.png') no-repeat;
+    }
+    .main-table.leftSide .main-table-menu .football {
+        background: url('../images/football-bg-tablet.png') no-repeat;
+    }
+    .main-table.leftSide .main-table-menu .basketball {
+        background: url('../images/basketball-bg-tablet.png') no-repeat;
+    }
+    .main-table.leftSide .main-table-menu .tennis {
+        background: url('../images/tennis-bg-tablet.png') no-repeat;
+    }
+    .league-row{
+        width: 736px;
+        height: 60px;
+        padding-left: 8px;
+    }
+    .league-row-inner input[type="checkbox"]:checked + label, .league-row-inner input[type="checkbox"]:not(:checked) + label{
+        padding-left: 24px;
+        font-size: 11px;
+    }
+    .league-content{
+        width: 736px;
+    }
+    .league-content .league-content-rightSide{
+        display: none;
+    }
+    .game-tab .game-tab-matches .match{
+        width: 736px;
+    }
+    .game-tab .game-tab-matches .game-coefficients{
+        display: none;
+    }
+    .game-tab .game-tab-matches .match .game-icons{
+        margin-left: 0;
+        margin-right: 0;
+        position: absolute;
+        right: 55px;
+    }
+    .league-content .game-tab-matches .summary .summary-headsUp{
+        width: 736px;
+    }
+    .league-content .game-tab-matches .summary .summary-headsUp-leftSide{
+        display: none;
+    }
+    .league-content .game-tab-matches .summary .summary-headsUp-rightSide .choose-coefficient.total{
+        width: 94px;
+    }
+    .league-content .game-tab-matches .summary .summary-headsUp-rightSide .choose-coefficient{
+        width: 40px;
+    }
+    .league-content .game-tab-matches .summary .summary-headsUp-rightSide{
+        padding-left: 143px;
+    }
+}
+
