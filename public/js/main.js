@@ -2,7 +2,7 @@ $(document).ready(function(){
     $(".owl-carousel .owl-dots").removeClass('disabled');
     $(".owl-carousel").owlCarousel({
         items:1,
-        // autoplay:true,
+        autoplay:true,
         mouseDrag: false,
         loop:true,
         autoplayTimeout:3500,
