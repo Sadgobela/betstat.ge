@@ -3778,4 +3778,7 @@ footer .footer-desc .footer-desc-content .info.league .info-desc div:nth-child(7
     justify-content: center;
     padding-top: 15px;
 }
+#top-ge-counter-container img{
+    border-radius: 3px;
+}
 
