@@ -474,7 +474,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="summary-statistics-away summary-statistics-all d-flex-spaceBetween">
-                                                        <div class="home d-flex-spaceCenter">გასვლა</div>
+                                                        <div class="home away d-flex-spaceCenter">გასვლა</div>
                                                         <div class="home-block d-flex-spaceCenter">
                                                             <div class="home-block-inner d-flex-spaceCenter current">{{$game->statistic[1]['goal_attempts_1']}}</div>
                                                             <div class="home-block-inner d-flex-spaceCenter">{{$game->statistic[1]['goal_attempts_2']}}</div>
@@ -538,7 +538,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="summary-statistics-away summary-statistics-all d-flex-spaceBetween">
-                                                        <div class="home d-flex-spaceCenter">გასვლა</div>
+                                                        <div class="home away d-flex-spaceCenter">გასვლა</div>
                                                         <div class="home-block d-flex-spaceCenter">
                                                             <div class="home-block-inner d-flex-spaceCenter current">{{$game->statistic[3]['goal_attempts_1']}}</div>
                                                             <div class="home-block-inner d-flex-spaceCenter">{{$game->statistic[3]['goal_attempts_2']}}</div>

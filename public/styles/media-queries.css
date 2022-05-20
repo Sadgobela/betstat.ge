@@ -3,6 +3,9 @@
         width: 1200px;
         display: block;
     }
+    footer .footer-desc .footer-desc-content .info .info-desc a:first-child{
+        float: none;
+    }
     .betStat-leftMenu .betStat-navBar ul li a{
         margin-right: 36px;
     }
@@ -96,6 +99,7 @@
     }
     .promotions-inner .promotions-inner-page .promotions-inner-page-header{
         width: 1200px;
+        height: 214px;
     }
     .promotions-inner .promotions-inner-page .promotions-inner-page-header-right{
         background: url("../images/promotions-inner-page-header-right-laptop.png") no-repeat;
@@ -192,6 +196,9 @@
     .userPage.changePasswordPage .user-content .user-content-left{
         width: 100%;
     }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content .tablet-version{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -216,6 +223,22 @@
         margin-left: 9px;
         margin-right: 6px;
         background-size: cover;
+    }
+    .betStat-rightMenu.logged-in .betStat-userLogo{
+        width: 32px;
+        height: 32px;
+        margin-left: 9px;
+        margin-right: 6px;
+        background-size: cover;
+    }
+    .betStat-rightMenu.logged-in .betStat-userNameInfo{
+        max-width: 60px;
+    }
+    .betStat-rightMenu.logged-in .betStat-userNameInfo p{
+        font-size: 12px;
+    }
+    .betStat-rightMenu.logged-in .betStat-userNameInfo span{
+        font-size: 9px;
     }
     .betStat-rightMenu.logged-out .betStat-logInRegister a.logIn{
         font-size: 11px;
@@ -397,6 +420,10 @@
     .game-tab .game-tab-matches .game-coefficients{
         display: none;
     }
+    .game-tab .game-tab-matches .summary-rightSide.game-coefficients{
+        display: flex;
+    }
+
     .game-tab .game-tab-matches .match .game-icons{
         margin-left: 0;
         margin-right: 0;
@@ -405,18 +432,559 @@
     }
     .league-content .game-tab-matches .summary .summary-headsUp{
         width: 736px;
+        position: relative;
     }
     .league-content .game-tab-matches .summary .summary-headsUp-leftSide{
-        display: none;
+        position: absolute;
+        top: 311px;
+        left: 138px;
+        padding-left: 0;
+        z-index: 9;
+        width: 100px;
+        text-align: center;
     }
     .league-content .game-tab-matches .summary .summary-headsUp-rightSide .choose-coefficient.total{
         width: 94px;
+        margin: 0;
     }
     .league-content .game-tab-matches .summary .summary-headsUp-rightSide .choose-coefficient{
         width: 40px;
     }
     .league-content .game-tab-matches .summary .summary-headsUp-rightSide{
         padding-left: 143px;
+    }
+    .league-content .choose-coefficient{
+        margin-right: 8px;
+    }
+    .league-content .choose-coefficient.lessThan{
+        margin-left: 4px;
+    }
+    .league-content .choose-coefficient.higherThan{
+        margin-right: 12px;
+        margin-left: 8px;
+    }
+    .league-content .game-tab-matches .summary .summary-inner{
+        width: 736px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: end;
+        padding-right: 11px;
+        position: relative;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics{
+        width: 736px;
+        height: 310px;
+        padding: 0;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-head{
+        height: 52px;
+        margin-bottom: 0;
+        padding: 12px 10px 14px 0;
+        box-sizing: border-box;
+        background: #191B23;
+        border: 1px solid #1E202B;
+        position: relative;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom{
+        font-size: 14px;
+        height: 258px;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-head .summary-statistics-head-third{
+        margin-left: 6px;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-first{
+        display: block!important;
+        flex-wrap: wrap;
+        position: absolute;
+        right: 133px;
+        top: 52px;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second.current{
+        display: flex;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom .statistics-block{
+        width: 98px;
+        height: auto;
+        background: transparent;
+        border: none;
+        box-sizing: border-box;
+        border-radius: 0;
+        font-size: 12px;
+        margin-bottom: 14px;
+    }
+    .statistics-block.d-flex-spaceCenter.watch{
+        display: none!important;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all {
+        display: block!important;
+        position: relative;
+        left: 380px;
+        top: 47px;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all.summary-statistics-away {
+        left: 506px;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all .home{
+        width: auto;
+        height: auto;
+        background: transparent;
+        border: 0;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+    /*.league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all.summary-statistics-home{*/
+    /*    position: relative;*/
+    /*}*/
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all.summary-statistics-home .home{
+        position: absolute;
+        top: -35px;
+        left: 0;
+        right: 0;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all.summary-statistics-home .home-block-inner:nth-child(2){
+        display: none!important;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all.summary-statistics-away .home-block-inner:nth-child(1){
+        display: none!important;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all .home-block .home-block-inner{
+        width: 111px;
+        height: 24px;
+        background: #1E202B;
+        border-radius: 10px;
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 4px;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all.summary-statistics-away .home-block-inner:nth-child(2){
+        background: #1E202B;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all.summary-statistics-home .home-block:nth-child(even) .home-block-inner:nth-child(1){
+        background: rgba(98, 122, 220, 0.35);
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all.summary-statistics-away .home-block:nth-child(odd) .home-block-inner:nth-child(2){
+        background: rgba(98, 122, 220, 0.35);
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-bottom-second .summary-statistics-all.summary-statistics-away .away{
+        position: absolute;
+        top: -35px;
+        left: 0;
+        right: 0;
+    }
+    .league-content .game-tab-matches .summary .summary-statistics-head .summary-statistics-head-first{
+        position: absolute;
+        top: 63px;
+        margin-right: 0;
+        padding-bottom: 7px;
+        width: 110px;
+        right: 125px;
+        z-index: 9;
+        padding-top: 0;
+    }
+    .league-content .game-tab-matches .summary{
+        width: 736px;
+    }
+    .league-content .game-tab-matches .summary .summary-leftSide{
+        position: absolute;
+        left: 0;
+        top: 308px;
+        z-index: 9;
+        width: auto;
+    }
+    .league-content .game-tab-matches .summary .summary-leftSide .summary-leftSide-H2H{
+        width: 375px;
+        padding: 0 27px;
+        box-sizing: border-box;
+        height: 164px;
+        margin: 0;
+    }
+    .game-tab .game-tab-matches .game-coefficients .game-coefficient.lessThan{
+        margin-right: 8px;
+        margin-left: 4px;
+    }
+    .league-content .game-tab-matches .summary .summary-rightSide .provider-company .provider-company-name{
+        margin-right: 6px;
+    }
+    .league-content .game-tab-matches .summary .summary-rightSide .provider-company{
+        min-width: auto;
+        max-width: initial;
+    }
+    .game-tab .game-tab-matches .game-coefficients .game-coefficient{
+        margin-right: 8px;
+        width: 40px;
+    }
+    .game-tab .game-tab-matches .game-coefficients .game-coefficient:last-child{
+        margin-right: 0;
+    }
+    .game-tab .game-tab-matches .game-coefficients .arrow-left{
+        margin-right: 8px;
+    }
+    .game-tab .game-tab-matches .game-coefficients .arrow-right{
+        margin-left: 8px;
+    }
+    .game-tab .game-tab-matches .game-coefficients .game-coefficient.higherThan{
+        margin-right: 12px;
+        margin-left: 8px;
+    }
+    .league-content .choose-coefficient.lessThan:before{
+        left: 15px;
+    }
+    .league-content .choose-coefficient.higherThan:before{
+        left: 16px;
+    }
+    .betStat-rightMenu .betStat-userParameters{
+        width: 132px;
+        height: 96px;
+        top: 42px;
+    }
+    .betStat-rightMenu .betStat-userParameters a{
+        font-size: 10px;
+        line-height: initial;
+        width: 132px;
+        height: 32px;
+        padding-right: 32px;
+    }
+    .betStat-rightMenu .betStat-userParameters a.profile:after{
+        width: 13px;
+        height: 15px;
+        top: 7px;
+        right: 12px;
+    }
+    .betStat-rightMenu .betStat-userParameters a.parameters:after{
+        width: 18px;
+        height: 15px;
+        top: 7px;
+        right: 7px;
+    }
+    .betStat-rightMenu .betStat-userParameters a.logOut:after{
+        width: 14px;
+        height: 12px;
+        top: 8px;
+        right: 11px;
+    }
+
+    .promotions .promotions-top{
+        width: 736px;
+    }
+    .promotions .promotions-top .promotions-top-right label{
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 9px;
+    }
+    .promotions .promotions-top .promotions-top-right select{
+        width: 360px;
+        height: 40px;
+    }
+    .promotions .promotions-top .promotions-top-right{
+        width: 360px;
+    }
+    .options li{
+        width: 360px;
+    }
+    .styledSelect{
+        width: 360px;
+        height: 40px;
+    }
+    .promotions .promotions-boxes .box{
+        width: 360px;
+        height: 255px;
+    }
+    .promotions .promotions-boxes .box .box-image{
+        width: 360px;
+        height: 165px;
+    }
+    .promotions .promotions-boxes .box .box-top{
+        padding: 10px 13px 10px 11px;
+    }
+    .promotions .promotions-boxes .box .box-top .box-top-caption{
+        width: 86px;
+        height: 16px;
+        font-size: 9px;
+        line-height: 10px;
+    }
+    .promotions .promotions-boxes .box .box-top .box-top-text{
+        font-size: 13px;
+        line-height: 15px;
+    }
+    .promotions .promotions-boxes .box .box-description-rate{
+        display: none;
+    }
+    .promotions .promotions-boxes .box .box-description-text{
+        font-size: 12px;
+        line-height: 12px;
+        width: 296px;
+        height: 24px;
+    }
+    .promotions .promotions-boxes .box .box-description-img{
+        width: 34px;
+        height: 34px;
+        margin-right: 8px;
+    }
+    .promotions .promotions-boxes .box .box-description{
+        padding: 11px 32px 0 10px;
+    }
+    footer .footer-inner .footer-inner-rightSide .fb{
+        background: url("../images/fb-tablet.png");
+        width: 21px;
+        height: 22px;
+    }
+    footer .footer-inner .footer-inner-rightSide .youtube{
+        background: url("../images/youtube-tablet.png");
+        width: 21px;
+        height: 22px;
+    }
+    footer .footer-inner-content{
+        height: 54px;
+    }
+    footer .footer-desc .footer-desc-content .info p{
+        font-size: 12px;
+    }
+    footer .footer-desc .footer-desc-content .info .info-desc p,
+    footer .footer-desc .footer-desc-content .info .info-desc a{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    footer .footer-desc .footer-desc-content .info .info-desc:before{
+        height: 48px;
+    }
+    footer .footer-desc .footer-desc-content .info .info-desc a:first-child{
+        float: none;
+    }
+
+    body.casino main, body.promotions main, body.table-games main, body.promotions-inner main{
+        padding: 89px 0 0;
+    }
+
+    .promotions-inner .promotions-inner-page{
+        margin-top: 0;
+        width: 736px;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-header{
+        width: 736px;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-header-left{
+        display: none;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-header-right{
+        display: none;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-content{
+        width: 736px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content h1{
+        display: none;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content .tablet-version{
+        display: block;
+        padding-left: 13px;
+        font-size: 14px;
+        line-height: 16px;
+        margin-top: 26px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content{
+        padding: 25px 28px 41px 15px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-headline .slot{
+        width: 72px;
+        height: 18px;
+        font-size: 10px;
+        margin-right: 19px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-headline .companyName{
+        font-size: 10px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-headline{
+        position: relative;
+        padding-left: 59px;
+        box-sizing: border-box;
+        height: 40px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-headline .date{
+        position: absolute;
+        top: 114px;
+        left: 13px;
+        font-size: 10px;
+        line-height: 11px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-description{
+        margin-top: 79px;
+        margin-left: 13px;
+        font-size: 12px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-header .promotions-inner-page-header-logo{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 239px;
+        left: 15px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-headline .rightSide {
+        position: absolute;
+        right: 0;
+        top: 110px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-headline .share{
+        font-size: 10px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-btn{
+        width: 330px;
+        height: 40px;
+        margin: 40px auto 0;
+        font-size: 14px;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-header .promotions-inner-page-header-rating{
+        background: none;
+        font-size: 12px;
+        line-height: 12px;
+        width: 40px;
+        height: 17px;
+        top: 258px;
+        right: 28px;
+        padding-bottom: 0;
+        align-items: center;
+    }
+    .promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-header .promotions-inner-page-header-rating:before{
+        content: '';
+        background: url('../images/promotions-inner-page-header-star-tablet.png') no-repeat center;
+        width: 24px;
+        height: 23px;
+        position: absolute;
+        top: -18px;
+    }
+    footer .footer-desc .footer-desc-content{
+        justify-content: center;
+    }
+    footer .footer-desc .footer-desc-content .info:nth-child(3){
+        display: none;
+    }
+    footer .footer-desc .footer-desc-content .info:nth-child(2){
+        min-width: 120px;
+    }
+
+    .betStat-header-news{
+        display: none;
+    }
+    .news .main-news-top{
+        width: 736px;
+        margin: 0px auto 16px;
+        padding-top: 100px;
+    }
+    .news .main-news-top .main-news-top-right{
+        width: 360px;
+    }
+    .news .main-news-top .main-news-top-right label{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .news .main-news-top .main-news-top-right select{
+        width: 360px;
+        height: 40px;
+    }
+    .news .news-categories-boxes{
+        width: 736px;
+    }
+    .news .news-categories-boxes .box,
+    .news .news-categories-boxes .box .box-img{
+        width: 360px;
+        height: 238px;
+    }
+    .news .news-categories-boxes .box .box-img .news-top{
+        padding: 10px 11px;
+    }
+    .news .news-categories-boxes .box .box-img .news-top .news-caption {
+        width: 76px;
+        height: 18px;
+        font-size: 10px;
+    }
+    .news .news-categories-boxes .box .box-img .news-bottom{
+        padding: 0 0 0 31px;
+        font-size: 12px;
+        bottom: 15px;
+    }
+    .news .news-categories-boxes .box .box-img .news-bottom:after{
+        height: 28px;
+        left: 21px;
+    }
+    .news-inner.promotions-inner .promotions-inner-page .promotions-inner-page-content{
+        padding: 30px 24px 40px 24px;
+    }
+    .news-inner.promotions-inner .promotions-inner-page .news-header-img{
+        width: 327px;
+        height: 216px;
+    }
+    .news-inner.promotions-inner .promotions-inner-page .promotions-inner-page-content h1{
+        width: 320px;
+        font-size: 12px;
+        line-height: 14px;
+        min-height: 40px;
+        padding-left: 12px;
+        margin: 32px 0 14px;
+    }
+    .news-inner.promotions-inner .promotions-inner-page .promotions-inner-page-content h1:after{
+        height: 40px;
+    }
+    .news-inner.promotions-inner .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-headline{
+        width: 330px;
+        margin: 0 0 52px;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-headline .slot{
+        width: 72px;
+        height: 18px;
+        margin-right: 0;
+        font-size: 10px;
+        position: absolute;
+        top: 34px;
+        left: 380px;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-headline .date{
+        font-size: 10px;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-headline .share{
+        font-size: 10px;
+    }
+    .promotions-inner .promotions-inner-page .promotions-inner-page-content .promotions-inner-page-content-description{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .userPage .user-test{
+        width: 736px;
+    }
+    .userPage .user-content {
+        width: 736px;
+    }
+    .userPage .user-content .user-content-left{
+        width: 446px;
+    }
+    .userPage .user-content .user-content-right{
+        width: 270px;
+    }
+    .userPage .user-content .user-content-left .profile .profile-block{
+        width: 346px;
+    }
+    .userPage .user-content .user-content-right .betStat-userNameInfo{
+        width: 200px;
+        height: 200px;
+    }
+    .userPage .user-content .user-content-right p{
+        font-size: 24px;
+    }
+    .userPage .user-content .user-content-right span{
+        font-size: 18px;
+    }
+    .userPage .user-content .user-content-left .profile .profile-block input{
+        width: 200px;
+        font-size: 12px;
+        padding-left: 16px;
+    }
+    #profileAvatar:before{
+        font-size: 12px;
+    }
+    .userPage .user-content .user-content-left .profile .profile-block label{
+        font-size: 12px;
     }
 }
 

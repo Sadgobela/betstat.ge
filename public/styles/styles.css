@@ -168,6 +168,7 @@ body.promotions-inner main {
     height: 70px;
     border-radius: 100%;
     border: 3px solid #627ADC;
+    box-sizing: border-box;
 }
 
 .betStat-rightMenu.logged-in .betStat-logInRegister {
@@ -283,7 +284,6 @@ body.promotions-inner main {
     background: url("../images/logout.png");
     width: 14px;
     height: 12px;
-    border-radius: 0 0 8px 8px;
     top: 14px;
     right: 17px;
     position: absolute;
@@ -2410,6 +2410,9 @@ body.promotions-inner main {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     min-height: 600px;
 }
+.promotions-inner.promotions-inner-tabletVersion .promotions-inner-page .promotions-inner-page-content .tablet-version{
+    display: none;
+}
 .news-inner.promotions-inner .promotions-inner-page .news-header-img{
     background: url("../images/news-header-img.png");
     width: 748px;
@@ -3613,7 +3616,7 @@ footer .footer-desc .footer-desc-content .info.league .info-desc div:nth-child(7
 }
 
 .betStat-header-carousel-inner-first .owl-carousel-poster {
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .betStat-header-carousel-inner .betStat-header-carousel-inner-first .owl-carousel .owl-carousel-description .owl-carousel-description-text span:hover{
@@ -3625,11 +3628,11 @@ footer .footer-desc .footer-desc-content .info.league .info-desc div:nth-child(7
 }
 
 .betStat-header-carousel-inner-second .owl-carousel-poster{
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .betStat-header-carousel-inner .betStat-header-carousel-inner-third .owl-carousel .info-slider .owl-carousel-poster{
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .main-table.leftSide .main-table-menu .football-inner:hover{

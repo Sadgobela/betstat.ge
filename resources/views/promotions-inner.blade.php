@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <body class="promotions-inner">
+    <body class="promotions-inner promotions-inner-tabletVersion">
     <main>
         <section class="promotions-inner-page">
             <div class="container">
@@ -37,6 +37,7 @@
                         <a class="twitter" target="_blank" href="https://twitter.com/share?text={{$data['title']}}&url={{ route('promoInner', ['id' => $data['id']]) }}"></a>
                     </div>
                 </div>
+                <h1 class="tablet-version">{{$data['title']}}</h1>
                 <div class="promotions-inner-page-content-description">
                     {!! $data['text'] !!}
                 </div>
