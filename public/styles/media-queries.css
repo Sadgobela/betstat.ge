@@ -447,11 +447,32 @@
         width: 94px;
         margin: 0;
     }
+    #basketball-content .league-content .game-tab-matches .summary .summary-headsUp-rightSide .choose-coefficient.total,
+    #tennis-content .league-content .game-tab-matches .summary .summary-headsUp-rightSide .choose-coefficient.total{
+        width: 97px;
+    }
+    #basketball-content .league-content .game-tab-matches .summary .summary-rightSide .provider-company .provider-company-logo,
+    #tennis-content .league-content .game-tab-matches .summary .summary-rightSide .provider-company .provider-company-logo{
+        margin-right: 13px;
+    }
     .league-content .game-tab-matches .summary .summary-headsUp-rightSide .choose-coefficient{
         width: 40px;
     }
+    #basketball-content .league-content .game-tab-matches .summary .summary-headsUp-rightSide .choose-coefficient,
+    #tennis-content .league-content .game-tab-matches .summary .summary-headsUp-rightSide .choose-coefficient{
+        width: 48px;
+        margin-right: 4px;
+    }
+    #basketball-content .league-content .game-tab-matches .summary .summary-headsUp-rightSide .choose-coefficient.handicap,
+    #tennis-content .league-content .game-tab-matches .summary .summary-headsUp-rightSide .choose-coefficient.handicap{
+        width: 121px;
+    }
     .league-content .game-tab-matches .summary .summary-headsUp-rightSide{
         padding-left: 143px;
+    }
+    #basketball-content .league-content .game-tab-matches .summary .summary-headsUp-rightSide,
+    #tennis-content .league-content .game-tab-matches .summary .summary-headsUp-rightSide{
+        padding-left: 148px;
     }
     .league-content .choose-coefficient{
         margin-right: 8px;
@@ -463,6 +484,10 @@
         margin-right: 12px;
         margin-left: 8px;
     }
+    #basketball-content .league-content .choose-coefficient.higherThan,
+    #tennis-content .league-content .choose-coefficient.higherThan{
+        margin-left: 0;
+    }
     .league-content .game-tab-matches .summary .summary-inner{
         width: 736px;
         display: flex;
@@ -471,6 +496,10 @@
         justify-content: end;
         padding-right: 11px;
         position: relative;
+    }
+    #basketball-content .league-content .game-tab-matches .summary .summary-inner,
+    #tennis-content .league-content .game-tab-matches .summary .summary-inner{
+        padding-right: 53px;
     }
     .league-content .game-tab-matches .summary .summary-statistics{
         width: 736px;
@@ -616,6 +645,15 @@
     .game-tab .game-tab-matches .game-coefficients .game-coefficient{
         margin-right: 8px;
         width: 40px;
+    }
+    #basketball-content .game-tab .game-tab-matches .game-coefficients .game-coefficient,
+    #tennis-content .game-tab .game-tab-matches .game-coefficients .game-coefficient{
+        margin-right: 4px;
+        width: 48px;
+    }
+    #basketball-content .game-tab .game-tab-matches .game-coefficients .game-coefficient.total,
+    #tennis-content .game-tab .game-tab-matches .game-coefficients .game-coefficient.total{
+        margin-right: 0;
     }
     .game-tab .game-tab-matches .game-coefficients .game-coefficient:last-child{
         margin-right: 0;
