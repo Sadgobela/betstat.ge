@@ -19,7 +19,7 @@
     <section class="betStat-header d-flex-spaceBetween container">
         <div class="betStat-leftMenu d-flex-spaceBetween">
             <div class="betStat-logo">
-                <a href="/"><img src="{{ asset('images/betstatLogo-ukraine.png') }}" alt=""></a>
+                <a href="/"><img src="{{ asset('images/BetStats-logo.png') }}" alt=""></a>
             </div>
             <div class="betStat-navBar">
                 <ul>
